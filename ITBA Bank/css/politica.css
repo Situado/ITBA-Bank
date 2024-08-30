@@ -1,0 +1,141 @@
+:root {
+    --title: #efefef;
+  --bg-grey: #333333;
+  --color-yellow: #ffcb37;
+  --text-color: #000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: var(--title);
+}
+
+#contacto a{
+    color: #000000;
+    text-decoration: underline;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    flex-direction: column;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .logo{
+    max-width: 80px;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-grey);
+    color: var(--title);
+    position: relative;
+}
+
+.sidebarMov{
+    background-color: red;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.sidebar{
+    display: none;
+}
+
+/*MAIN*/
+
+
+strong{
+    font-weight: bold;
+}
+
+
+
+
+/*///F O O T E R ///*/
+
+.footer-container{ /*esto va en la query?*/
+    background-color:var(--bg-grey);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 20; /*footer quede encima de sidebar*/
+    color:var(--title);
+    gap:20px;
+}
+
+.unorderlist{ /*links del footer*/   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color:var(--title) ;
+    font-size: 20px;
+}   
+
+.estosdev{ /*subrayado ancla*/
+    text-decoration: underline;   
+}
+
+
+@media only screen and (min-width: 768px) {
+    .sidebar{
+        display: flex;
+        background-color:var(--bg-grey); 
+        position: fixed;
+        margin: 0px;
+
+        .sidebar-items{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+            font-size: 20px;
+            text-transform: uppercase;
+            min-height: 100dvh;
+            padding: 1rem;
+           z-index: 10; /*barra atrás del footer*/
+           
+
+        }
+        
+    }
+
+    .main{
+        margin-left: 200px;
+        padding: 10px;
+        font-size: 20px;
+        font-family:Helvetica, sans-serif;
+    }
+
+
+
+    .footer-container{
+        margin-left: 200px;
+    }
+
+    .sidebarMov{
+        display: none;
+    }
+}

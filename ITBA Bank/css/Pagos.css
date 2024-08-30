@@ -1,0 +1,114 @@
+:root {
+  --title: #efefef;
+--bg-grey: #333333;
+--color-yellow: #ffcb37;
+--text-color: #000000;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: var(--title);
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  flex-direction: column;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+
+.logo{
+  max-width: 80px;
+}
+
+.head{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-grey);
+  color: var(--title);
+  position: relative;
+}
+
+.sidebarMov{
+  background-color: red;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+}
+
+.sidebar{
+ display: none;
+}
+
+/*///F O O T E R ///*/
+
+.footer-container{ /*esto va en la query?*/
+  background-color:var(--bg-grey);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 20; /*footer quede encima de sidebar*/
+  color: var(--title);
+  gap:20px;
+}
+
+.unorderlist{ /*links del footer*/   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color:var(--title) ;
+  font-size: 20px;
+}   
+
+.estosdev{ /*subrayado ancla*/
+  text-decoration: underline;   
+}
+
+
+@media only screen and (min-width: 768px) {
+  .sidebar{
+      display: flex;
+      background-color:var(--bg-grey); 
+      position: fixed;
+
+      .sidebar-items{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5rem;
+          font-size: 20px;
+          text-transform: uppercase;
+          min-height: 100vh;
+          padding: 1rem;
+         z-index: 10; /*barra atrás del footer*/
+         
+
+      }
+      
+  }
+
+  .sidebarMov{
+      display: none;
+  }
+}
